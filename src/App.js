@@ -17,7 +17,6 @@ function App() {
           <Route path="/CategoryProducts" component={CategoryProducts}/>
           <Route path="/CheckOut" component={CheckOut}/>
         </Switch>
-    
     </div>
   );
 }
