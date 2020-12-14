@@ -7,7 +7,7 @@ import { siginout } from './../../Redux/auth/authActions';
 const SignOut = ({siginout}) => {
     return (
         <div>
-            <button onClick={siginout}>Sign Out</button>
+            <button onClick={siginout}>SignOut</button>
         </div>
     )
 }
