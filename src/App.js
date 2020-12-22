@@ -6,14 +6,14 @@ import Catgeory from "./Pages/Category/Catgeory";
 import CategoryProducts from "./Pages/CategoryProducts/CategoryProducts";
 import CheckOut from "./Pages/CheckOut/CheckOut";
 import { useEffect } from "react";
-import { connect } from 'react-redux';
-import { firebaseAuthListener } from './Redux/auth/authActions';
+import { connect } from "react-redux";
+import { firebaseAuthListener } from "./Redux/auth/authActions";
+import Test from './Pages/Test/Test';
 
-function App({firebaseAuthListener}) {
-
-  useEffect(()=>{
+function App({ firebaseAuthListener }) {
+  useEffect(() => {
     firebaseAuthListener();
-  },[firebaseAuthListener])
+  }, [firebaseAuthListener]);
   return (
     <div className="App">
       <Switch>
@@ -22,12 +22,14 @@ function App({firebaseAuthListener}) {
         <Route path="/Category" component={Catgeory} />
         <Route path="/CategoryProducts" component={CategoryProducts} />
         <Route path="/CheckOut" component={CheckOut} />
+        <Route path="/Test" component={Test} />
+
       </Switch>
     </div>
   );
 }
 
-var actions={
+var actions = {
   firebaseAuthListener,
-}
-export default connect(null,actions)(App);
+};
+export default connect(null, actions)(App);
