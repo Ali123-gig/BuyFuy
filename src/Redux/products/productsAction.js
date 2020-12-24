@@ -1,6 +1,8 @@
 import { firestore, serverTimestamp, storage } from "./../../Firebase/Firebase";
 import { v4 as uuid } from "uuid";
+import { SET_PRODUCTS } from "./productsConstant";
 
+// admin stuff
 export var uploadProducts = (productsObj) => async () => {
   try {
     //  console.log(productsObj)
@@ -26,11 +28,31 @@ export var uploadProducts = (productsObj) => async () => {
         productsObj.quantity = parseFloat(productsObj.quantity);
         console.log(productsObj);
 
-        await firestore.collection("products").add(productsObj)
+        await firestore.collection("products").add(productsObj);
       }
     );
     //2- modify  productObj  with cover photos url and created At
     // 3- create doc in firstore
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
+export var fetchProducts = () => async (dispatch) => {
+  try {
+    var query = await firestore.collection("products").get();
+    var products = [];
+    query.docs.forEach((doc) => {
+      products.push(doc.data());
+    });
+    // categorizeProducts(products);
+    dispatch({
+      type: SET_PRODUCTS,
+      payload: {
+        products,
+      },
+    });
   } catch (error) {
     console.log(error);
   }
