@@ -1,6 +1,6 @@
 import { SET_PRODUCTS } from "./productsConstant";
  
-var initialState = null;
+var initialState = [];
 
 var productsReducer = (state = initialState, action) => {
   var { type, payload } = action;

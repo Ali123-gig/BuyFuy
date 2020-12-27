@@ -10,7 +10,7 @@ export var categorizeProducts = (productsArr) => {
   //   console.log(category)
 
   // })
-  for (var product of productsArr) {
+  for(var product of productsArr) {
     categoryName = product.category;
     // console.log(categoryName)
     isCategoryExist = categorizes.some(
