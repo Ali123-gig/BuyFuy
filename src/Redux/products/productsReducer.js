@@ -1,4 +1,4 @@
-import { SET_PRODUCTS } from "./productsConstant";
+import { CLEAR_PRODUCTS, SET_PRODUCTS } from "./productsConstant";
  
 var initialState = [];
 
@@ -7,6 +7,8 @@ var productsReducer = (state = initialState, action) => {
   switch (type) {
     case SET_PRODUCTS:
       return [...payload.products];
+      case CLEAR_PRODUCTS:
+        return [];
     default:
       return state;
   }
