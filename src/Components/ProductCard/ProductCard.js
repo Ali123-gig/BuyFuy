@@ -1,14 +1,15 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import { addProductToCart } from "./../../Redux/cart/cartActions";
 
 const ProductCard = ({ addProductToCart, ...product }) => {
-  var { title, cost } = product;
+  var { title, cost ,id} = product;
 
   return (
     <div>
       <h1>
-        {title}-{`$${cost}`}-
+        <Link to={`/Product/${id}`}>{title}</Link>-{`$${cost}`}-
         <button onClick={() => addProductToCart(product)}>Add to cart</button>{" "}
       </h1>
     </div>

@@ -1,5 +1,6 @@
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
+import Product from "./Pages/Product/Product";
 import Home from "./Pages/Home/Home";
 import Authentication from "./Pages/Authentication/Authentication";
 import Category from "./Pages/Category/Category";
@@ -23,6 +24,7 @@ function App({ firebaseAuthListener }) {
         <Route path="/Authentication" component={Authentication} />
         <Route path="/Category" component={Category} exact />
         <Route path="/CategoryProducts/:category" component={CategoryProducts} />
+        <Route path="/Product/:ProductId" component={Product}/>
         <Route path="/CheckOut" component={CheckOut}/>
         <Route path="/Test" component={Test}/>
       </Switch>
