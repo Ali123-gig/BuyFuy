@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { connect } from 'react-redux';
+import Cart from "../../Components/Cart/Cart";
 import { uploadProducts } from './../../Redux/products/productsAction';
 
 const Test = ({uploadProducts}) => {
@@ -25,7 +26,7 @@ const Test = ({uploadProducts}) => {
   return (
     <div>
       <h1>Test</h1>
-      <form onSubmit={handleSubmit}>
+      {/* <form onSubmit={handleSubmit}>
         <input
           onChange={(e) => setCategory(e.target.value)}
           type="text"
@@ -71,7 +72,8 @@ const Test = ({uploadProducts}) => {
         />
         <br />
         <button type="submit">Submit</button>
-      </form>
+      </form> */}
+      <Cart/>
     </div>
   );
 };

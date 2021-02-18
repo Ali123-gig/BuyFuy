@@ -23,8 +23,8 @@ function App({ firebaseAuthListener }) {
         <Route path="/Authentication" component={Authentication} />
         <Route path="/Category" component={Category} exact />
         <Route path="/CategoryProducts/:category" component={CategoryProducts} />
-        <Route path="/CheckOut" component={CheckOut} />
-        <Route path="/Test" component={Test} />
+        <Route path="/CheckOut" component={CheckOut}/>
+        <Route path="/Test" component={Test}/>
       </Switch>
     </div>
   );
