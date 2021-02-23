@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 import Cart from "../../Components/Cart/Cart";
-import { uploadProducts } from './../../Redux/products/productsAction';
+import Header from "../../Components/Header/Header";
+import { uploadProducts } from "./../../Redux/products/productsAction";
+import Para from "./../../Components/Para/Para";
+import Button from "../../Components/Button/Button";
 
-const Test = ({uploadProducts}) => {
+const Test = ({ uploadProducts }) => {
   var [category, setCategory] = useState("");
   var [title, setTitle] = useState("");
   var [cost, setCost] = useState("");
@@ -24,7 +27,7 @@ const Test = ({uploadProducts}) => {
     uploadProducts(ProductsObj);
   };
   return (
-    <div>
+    <div style={{fontSize:"62.5%"}}>
       <h1>Test</h1>
       {/* <form onSubmit={handleSubmit}>
         <input
@@ -73,12 +76,22 @@ const Test = ({uploadProducts}) => {
         <br />
         <button type="submit">Submit</button>
       </form> */}
-      <Cart/>
+      <Cart />
+      <Header fontSize={15} fontWeight="bold">
+        This my first Heading
+      </Header>
+      <Header fontWeight="bold" color="blue">
+        This my first Heading
+      </Header>
+      <Para  color="red">
+        this is my first Parargraph
+      </Para>
+      <Button fontSize={13} fontWeight="bold" background="blue">Click Me!</Button>
     </div>
   );
 };
 
-var action={
-    uploadProducts,
-}
-export default connect(null,action)(Test);
+var action = {
+  uploadProducts,
+};
+export default connect(null, action)(Test);

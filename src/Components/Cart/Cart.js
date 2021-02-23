@@ -9,7 +9,7 @@ const Cart = ({ orderGenerate }) => {
     <div>
       <h1>Cart</h1>
       <CartList />
-      <Link to="/CheckOut/:orderId"> 
+      <Link to="/CheckOut/:orderId">
         <button onClick={orderGenerate}>CheckOut</button>
       </Link>
     </div>
