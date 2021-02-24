@@ -1,35 +1,43 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./Navbar.css";
-import { composeWithDevTools } from "redux-devtools-extension";
+import Headers from "./../Header/Header";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { siginout } from "./../../Redux/auth/authActions";
 
-const Navbar = () => {
+const MenuItems = ({ children, to = "#",...restProps }) => (
+  <div>
+    <div {...restProps} className="menuItems">
+      <Link to={to}>
+        <Headers
+          style={{ cursor: "pointer", display: "inline" }}
+          fontSize={24}
+          fontWeight="bold"
+        >
+          {children}
+        </Headers>
+      </Link>
+    </div>
+  </div>
+);
+const Navbar = ({ auth ,siginout}) => {
   return (
     <div className="Navbar">
-      <div className="Logo">
-        <Link to="/">
-          <h1>Logo</h1>
-        </Link>
-      </div>
-      <div className="navItems">
-        <div className="navProducts">
-          <Link to="/Category">
-            <h2>Categories</h2>
-          </Link>
-        </div>
-        <div className="navProducts">
-          <Link to="/Authentication">
-            <h2>Authentication</h2>
-          </Link>
-        </div>
-        <div className="navProducts">
-          <Link to="/test">
-            <h2>test</h2>
-          </Link>
-        </div>
-      </div>
+      <MenuItems to="/">Logo</MenuItems>
+      <MenuItems to="/Category">Shop</MenuItems>
+      <MenuItems>Cart</MenuItems>
+      {auth ? (
+        <MenuItems to="/Authentication" onClick={siginout}>Logout</MenuItems>
+      ) : (
+        <MenuItems to="/Authentication">Login</MenuItems>
+      )}
     </div>
   );
 };
-
-export default Navbar;
+var actions = {
+  siginout,
+};
+var mapState = (state) => ({
+  auth: state.auth,
+});
+export default connect(mapState, actions)(Navbar);

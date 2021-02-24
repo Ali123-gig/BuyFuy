@@ -20,13 +20,18 @@ function App({ firebaseAuthListener }) {
     <div className="App">
       <Navbar />
       <Switch>
-        <Route path="/" component={Home} exact />
-        <Route path="/Authentication" component={Authentication} />
-        <Route path="/Category" component={Category} exact />
-        <Route path="/CategoryProducts/:category" component={CategoryProducts} />
-        <Route path="/Product/:ProductId" component={Product}/>
-        <Route path="/CheckOut/:orderId" component={CheckOut}/>
-        <Route path="/Test" component={Test}/>
+        <div className="pagesContainer">
+          <Route path="/" component={Home} exact />
+          <Route path="/Authentication" component={Authentication} />
+          <Route path="/Category" component={Category} exact />
+          <Route
+            path="/CategoryProducts/:category"
+            component={CategoryProducts}
+          />
+          <Route path="/Product/:ProductId" component={Product} />
+          <Route path="/CheckOut/:orderId" component={CheckOut} />
+          <Route path="/Test" component={Test} />
+        </div>
       </Switch>
     </div>
   );

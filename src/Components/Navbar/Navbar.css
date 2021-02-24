@@ -1,24 +1,15 @@
-.Navbar{
-    height: 15vh;
-    width: 100vw;
-    background: lightgreen;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-}
-.Logo{
-    box-sizing: border-box;
-    padding: 0 40px;
-    display: flex;
-    align-items: center;
-    /* justify-content: center; */
-}
-.navItems{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-.navProducts{
-
-    padding:0px 30px;
+.Navbar {
+  width: 100vw;
+  height: var(--navbarHeight);
+  display: grid;
+  background: lightseagreen;
+  grid-template-columns: 1fr repeat(3, min-content);
+  padding: 0px 60px;
+  box-sizing: border-box;
+  align-items: center;
+  column-gap: 20px;
+  font-size: 62.5%;
+  position: fixed;
+  top: 0;
+  left: 0;
 }

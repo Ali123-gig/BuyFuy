@@ -1,0 +1,12 @@
+.home {
+  display: grid;
+  grid-template-rows: minmax(calc(100vh - var(--navbarHeight)), min-content);
+  grid-template-columns: repeat(2, 1fr);
+  background: lightsalmon;
+}
+.left {
+  background: chartreuse;
+}
+.right {
+  background: chocolate;
+}

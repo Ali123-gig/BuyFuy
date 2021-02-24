@@ -11,4 +11,17 @@ a{
 :root{
     --heading-font: 'Roboto', sans-serif;
     --para-font : 'Open Sans', sans-serif;
+    --navbarHeight:70px
+}
+.pagesContainer{
+    padding-top: var(--navbarHeight);
+
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
 }

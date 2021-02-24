@@ -6,6 +6,7 @@ import {
 } from "./../../Firebase/Firebase";
 import { REMOVE_USER, SET_USER } from "./authConstants";
 import firebase from "./../../Firebase/Firebase";
+import history from "./../../history/history";
 
 export var setUser = (user) => ({
   type: SET_USER,
@@ -25,6 +26,9 @@ export var signup = (cred) => async (dispatch) => {
       user: { uid },
     } = await auth.createUserWithEmailAndPassword(email, password);
 
+    ///navigate to home page
+    history.push("/");
+
     // save user data on firestore
     var userInfo = {
       fullName,
@@ -34,7 +38,6 @@ export var signup = (cred) => async (dispatch) => {
     await firestore.collection("users").doc(uid).set(userInfo);
 
     ///setting for the state in redux
-    
   } catch (error) {
     console.log(error);
   }
@@ -56,12 +59,13 @@ export var signin = ({ email, password }) => async (dispatch) => {
     var {
       user: { uid },
     } = await auth.signInWithEmailAndPassword(email, password);
+    //navigate to home page
+    history.push("/");
     //fetch user data from firestore
     var userData = await firestore.collection("users").doc(uid).get();
     // console.log(userData.data())
     var { fullName, email: userEmail } = userData.data();
     //set user on auth state
-    
   } catch (error) {
     console.log(error);
   }
@@ -82,7 +86,7 @@ export var googleSigin = () => async (dispatch) => {
       await firestore.collection("users").doc(uid).set(userObj);
       ///setting for the state in redux
     }
-    
+    history.push("/");
   } catch (error) {
     console.log(error);
   }
@@ -95,9 +99,10 @@ export var firebaseAuthListener = () => async (dispatch) => {
       if (user) {
         // User is signed in.
         var { uid } = user;
+        console.log(uid);
         var query = await firestore.collection("users").doc(uid).get();
-        console.log(query.data());
-        var {fullName,email} = query.data();
+        // console.log(query.data());
+        var { fullName, email } = query.data();
         //set user on auth state
         var userDataState = {
           fullName,
