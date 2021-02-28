@@ -3,6 +3,7 @@ import CategoryListItem from '../CategoryListItem/CategoryListItem'
 import { connect } from 'react-redux';
 import { fetchProducts } from "../../Redux/products/productsAction";
 import { categorizeProducts } from './../../utility/products';
+import "./CategoryList.css"
 
 
 const CategoryList = ({ fetchProducts,categorizes }) => {
@@ -12,7 +13,7 @@ const CategoryList = ({ fetchProducts,categorizes }) => {
       fetchProducts();
     }, []);
     return (
-        <div>
+        <div className="CategoryList">
          {categorizes.map((category)=>
              <CategoryListItem key={category.category} {...category}/>
          )} 

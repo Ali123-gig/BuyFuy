@@ -7,7 +7,7 @@ import Header from "./../Header/Header";
 import Button from "../Button/Button";
 
 const ProductCard = ({ addProductToCart, ...product }) => {
-  var { title, cost, id ,coverPhoto} = product;
+  var { title, cost, id, coverPhoto } = product;
 
   return (
     <div className="productCard center">
@@ -16,15 +16,27 @@ const ProductCard = ({ addProductToCart, ...product }) => {
         <button onClick={() => addProductToCart(product)}>Add to cart</button>{" "}
       </h1> */}
       <div className="productCardHover center">
-        <Button onClick={() => addProductToCart(product)} fontSize={12} fontWeight="semi-bold">Add to cart </Button>
+        <Button
+          onClick={() => addProductToCart(product)}
+          fontSize={12}
+          fontWeight="semi-bold"
+        >
+          Add to cart{" "}
+        </Button>
       </div>
-      <div style={{background:`url(${coverPhoto})`,backgroundSize:"100% 100% ,cover"}} className="productCard-image"></div>
+      <div
+        style={{
+          background: `url(${coverPhoto})`,
+          backgroundSize: "100% 100% ,cover",
+        }}
+        className="productCard-image"
+      ></div>
       <Header
         style={{ alignSelf: "flex-start", marginTop: "0.5em" }}
         fontSize={15}
         fontWeight="bold"
       >
-        {title}
+        <Link to={`/Product/${id}`}>{title}</Link>
       </Header>
       <Header
         style={{ alignSelf: "flex-start" }}

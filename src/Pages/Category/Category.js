@@ -12,8 +12,7 @@ const Category = ({clearProducts}) => {
   },[])
   return (
     <div className="category">
-      <h1>Category </h1>
-      <CategoryList />
+      <CategoryList/>
     </div>
   );
 };

@@ -1,9 +1,9 @@
 .productCard {
-  width: 20em;
+  width: 17em;
   /* height: 40em; */
   background: #fff;
   border: 2px solid black;
-  padding: 2em;
+  padding: 1em;
   /* transform: translateX(300px); */
   box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.4);
   position: relative;
@@ -23,7 +23,7 @@
   background: rgba(0, 0, 0, 0.3);
   position: absolute;
   transform: scaleX(0);
-  transition: transform 300ms ease-out;
+  transition: transform 1000ms ease-out;
   transform-origin: left;
 }
 .productCard:hover .productCardHover {
