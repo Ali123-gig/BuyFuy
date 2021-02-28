@@ -9,13 +9,15 @@ const Button = ({
   color = "white",
   fontSize,
   fontWeight,
+  ...restProps
 }) => {
   return (
     <button
+      {...restProps}
       style={{ background, color, fontSize, fontWeight, ...style }}
       className="button"
     >
-      <Para color fontSize={fontSize} fontWeigh={fontWeight}>
+      <Para color fontSize={fontSize} fontWeight={fontWeight}>
         {children}
       </Para>
     </button>

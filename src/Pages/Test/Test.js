@@ -5,6 +5,7 @@ import Header from "../../Components/Header/Header";
 import { uploadProducts } from "./../../Redux/products/productsAction";
 import Para from "./../../Components/Para/Para";
 import Button from "../../Components/Button/Button";
+import ProductCard from "../../Components/ProductCard/ProductCard";
 
 const Test = ({ uploadProducts }) => {
   var [category, setCategory] = useState("");
@@ -77,7 +78,7 @@ const Test = ({ uploadProducts }) => {
         <button type="submit">Submit</button>
       </form> */}
       <Cart />
-      <Header fontSize={15} fontWeight="bold">
+      {/* <Header fontSize={15} fontWeight="bold">
         This my first Heading
       </Header>
       <Header fontWeight="bold" color="blue">
@@ -86,7 +87,8 @@ const Test = ({ uploadProducts }) => {
       <Para  color="red">
         this is my first Parargraph
       </Para>
-      <Button fontSize={13} fontWeight="bold" background="blue">Click Me!</Button>
+      <Button fontSize={13} fontWeight="bold" background="blue">Click Me!</Button> */}
+      <ProductCard/>
     </div>
   );
 };
