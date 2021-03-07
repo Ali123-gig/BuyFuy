@@ -4,8 +4,9 @@ import Headers from "./../Header/Header";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { siginout } from "./../../Redux/auth/authActions";
+import Cart from "../Cart/Cart";
 
-const MenuItems = ({ children, to = "#",...restProps }) => (
+const MenuItems = ({ children, to = "#", ...restProps }) => (
   <div>
     <div {...restProps} className="menuItems">
       <Link to={to}>
@@ -20,14 +21,28 @@ const MenuItems = ({ children, to = "#",...restProps }) => (
     </div>
   </div>
 );
-const Navbar = ({ auth ,siginout}) => {
+const Navbar = ({ auth, siginout }) => {
+  var[navbar,setNavbar]=React.useState(false)
   return (
     <div className="Navbar">
       <MenuItems to="/">Logo</MenuItems>
       <MenuItems to="/Category">Shop</MenuItems>
-      <MenuItems>Cart</MenuItems>
+      <MenuItems to="/Test">Test</MenuItems>
+      <div>
+        <Headers
+        onClick={()=>setNavbar(!navbar)}
+          style={{ cursor: "pointer", display: "inline" }}
+          fontSize={24}
+          fontWeight="bold"
+        >
+          Cart
+        </Headers>
+  {navbar ?<Cart/>:null}
+      </div>
       {auth ? (
-        <MenuItems to="/Authentication" onClick={siginout}>Logout</MenuItems>
+        <MenuItems to="/Authentication" onClick={siginout}>
+          Logout
+        </MenuItems>
       ) : (
         <MenuItems to="/Authentication">Login</MenuItems>
       )}

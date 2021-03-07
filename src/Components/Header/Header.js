@@ -22,11 +22,13 @@ const Header = ({
   fontWeight = "bold",
   style = {},
   color = "black",
+  ...resProps
 }) => {
   var fontWeightValue = fontWeightEstimater(fontWeight);
   var fontSizeValue = fontSize / 10;
   return (
     <div
+      {...resProps}
       className="Header"
       style={{
         fontWeight: fontWeightValue,

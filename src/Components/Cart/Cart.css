@@ -1,0 +1,12 @@
+.cart {
+  width: 25em;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content 30em min-content;
+  background: RED;
+  padding: 2em;
+  justify-items: center;
+  row-gap: 1em;
+  position: absolute;
+  transform: translateX(-30%);
+}

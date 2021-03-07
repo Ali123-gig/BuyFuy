@@ -1,0 +1,21 @@
+.cartList {
+  width: 100%;
+  height: 100%;
+  background: lightsalmon;
+  display: grid;
+  row-gap: 1em;
+  overflow-y: scroll;
+}   
+.cartList::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  .cartList::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  .cartList::-webkit-scrollbar-thumb {
+    background: #888;
+  }

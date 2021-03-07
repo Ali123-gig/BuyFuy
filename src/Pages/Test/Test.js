@@ -88,7 +88,7 @@ const Test = ({ uploadProducts }) => {
         this is my first Parargraph
       </Para>
       <Button fontSize={13} fontWeight="bold" background="blue">Click Me!</Button> */}
-      <ProductCard/>
+      {/* <ProductCard/> */}
     </div>
   );
 };
