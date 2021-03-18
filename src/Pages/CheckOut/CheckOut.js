@@ -22,6 +22,10 @@ const CheckOut = ({ total }) => {
 };
 var mapState = (state) => ({
   total: calculateTotal(state.cart),
+
+
+
+  
 });
 
 export default connect(mapState)(CheckOut);
