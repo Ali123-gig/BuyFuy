@@ -1,0 +1,13 @@
+.check-out{
+    font-size: 62.5%;
+    display: grid;
+    grid-template-columns: 70vw;
+    grid-template-rows: calc(100vh - var(--navbarHeight));
+    background: rgb(68, 61, 61);
+    justify-content: center;
+    padding-top: 15em;
+}
+.check{
+    display: grid;
+    grid-template-rows: min-content 1fr min-content;
+}

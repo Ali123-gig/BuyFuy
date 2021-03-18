@@ -5,7 +5,7 @@ import {
   removeProductFromCart,
   deleteItemFromCart
 } from "./../../Redux/cart/cartActions";
-
+import "./CheckoutListItem.css"
 const CheckoutListItem = ({
   addProductToCart,
   removeProductFromCart,
