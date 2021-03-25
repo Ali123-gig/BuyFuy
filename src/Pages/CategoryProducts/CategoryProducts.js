@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import ProductCard from "../../Components/ProductCard/ProductCard";
 import { fetchCategpryProducts } from "./../../Redux/products/productsAction";
+import "./CategoryProducts.css";
 
 const CategoryProducts = ({
   match: {
@@ -16,9 +17,13 @@ const CategoryProducts = ({
   }, []);
   console.log(products);
   return (
-    <div>
-      <h1>{category}-CategoryProducts</h1>
-      {products.map((product)=><ProductCard key={product.title} {...product}/>)}
+    <div className="categoryProducts">
+      <div className="categoryProductsList">
+        <h1 className="category-text additional">{category}</h1>
+        {products.map((product) => (
+          <ProductCard key={product.title} {...product} />
+        ))}
+      </div>
     </div>
   );
 };

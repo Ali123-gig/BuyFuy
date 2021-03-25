@@ -16,8 +16,7 @@ const CategoryList = ({ fetchProducts,categorizes }) => {
         <div className="CategoryList">
          {categorizes.map((category)=>
              <CategoryListItem key={category.category} {...category}/>
-         )} 
-
+         )}
         </div>
     )
 }
