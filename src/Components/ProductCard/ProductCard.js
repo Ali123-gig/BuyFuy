@@ -3,8 +3,8 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { addProductToCart } from "./../../Redux/cart/cartActions";
 import "./ProductCard.css";
-import Header from "./../Header/Header";
 import Button from "../Button/Button";
+import Header from "../Header/Header";
 
 const ProductCard = ({ addProductToCart, ...product }) => {
   var { title, cost, id, coverPhoto } = product;

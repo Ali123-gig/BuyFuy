@@ -1,0 +1,13 @@
+.checkoutlist {
+  display: grid;
+  background: chartreuse;
+  overflow-y: scroll;
+  row-gap: 1em;
+}
+.checkout-list-item-extends {
+  /* justify-content: center; */
+  justify-items: center;
+  margin-bottom: 4em;
+  border-bottom: 2px solid black;
+  padding: 1em 0em;
+}

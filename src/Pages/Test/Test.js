@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import Cart from "../../Components/Cart/Cart";
-import Header from "../../Components/Header/Header";
+// import  from "../../Components/Header/Header";
 import { uploadProducts } from "./../../Redux/products/productsAction";
 import Para from "./../../Components/Para/Para";
 import Button from "../../Components/Button/Button";

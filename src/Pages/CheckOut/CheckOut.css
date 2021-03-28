@@ -1,13 +1,19 @@
-.check-out{
-    font-size: 62.5%;
-    display: grid;
-    grid-template-columns: 70vw;
-    grid-template-rows: calc(100vh - var(--navbarHeight));
-    background: rgb(68, 61, 61);
-    justify-content: center;
-    padding-top: 15em;
+.checkout-page-container {
+  font-size: 62.5%;
+  display: grid;
+  grid-template-columns: 80vw;
+  grid-template-rows: calc(100vh - var(--navbarHeight));
+  background: lightgrey;
+  justify-content: center;
 }
-.check{
-    display: grid;
-    grid-template-rows: min-content 1fr min-content;
+.check {
+  padding: 5em;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  row-gap: 3em;
+}
+.checkout-bottom-content{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  justify-items: start;
 }
