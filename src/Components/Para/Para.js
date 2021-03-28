@@ -22,11 +22,13 @@ const Para = ({
   fontWeight = "bold",
   style = {},
   color = "black",
+  ...restProps
 }) => {
   var fontWeightValue = fontWeightEstimater(fontWeight);
   var fontSizeValue = fontSize / 10;
   return (
     <div
+    {...restProps}
       className="Para"
       style={{
         fontWeight: fontWeightValue,

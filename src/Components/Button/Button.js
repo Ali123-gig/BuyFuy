@@ -9,15 +9,17 @@ const Button = ({
   color = "white",
   fontSize,
   fontWeight,
+  disabled=false,
   ...restProps
 }) => {
   return (
     <button
+      disabled={disabled}
       {...restProps}
-      style={{ background, color, fontSize, fontWeight, ...style }}
+      style={{ background:disabled ?"lightgray":background, color, fontSize, fontWeight, ...style }}
       className="button"
     >
-      <Para color fontSize={fontSize} fontWeight={fontWeight}>
+      <Para style={{textDecoration:disabled?"line-through": ""}} color={disabled?"black":color} fontSize={fontSize} fontWeight={fontWeight}>
         {children}
       </Para>
     </button>

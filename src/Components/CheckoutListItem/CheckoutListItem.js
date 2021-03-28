@@ -12,14 +12,24 @@ const CheckoutListItem = ({
   addProductToCart,
   removeProductFromCart,
   deleteItemFromCart,
+  title,
+  cost,
+  coverPhoto,
+  quantity,
   ...products
 }) => {
   return (
     <div className="checkout-list-item">
       <div className="checkout-item-products">
-        <div className="checkout-item-products-image"></div>
+        <div
+          className="checkout-item-products-image"
+          style={{
+            background: `url(${coverPhoto})`,
+            backgroundSize: "100% 100%,cover",
+          }}
+        ></div>
         <Para fontSize={20} fontWeight="semi-bold">
-          P Name
+          {title}
         </Para>
       </div>
       <div
@@ -35,11 +45,12 @@ const CheckoutListItem = ({
             borderBottomLeftRadius: "20px",
             transform: "translateX(5px)",
           }}
+          onClick={() => addProductToCart(products)}
         >
           +
         </Button>
         <Button color="black" background="#ffff">
-          3
+          {quantity}
         </Button>
         <Button
           color="black"
@@ -50,16 +61,25 @@ const CheckoutListItem = ({
             borderBottomRightRadius: "20px",
             transform: "translateX(-5px)",
           }}
+          onClick={() => removeProductFromCart(products.id)}
         >
           -
         </Button>
       </div>
       <div className="checkout-item-price center">
-        <Para fontSize={26} fontWeight="semi-bold">$240</Para>
+        <Para fontSize={26} fontWeight="semi-bold">
+          ${cost}
+        </Para>
       </div>
       <div className="checkout-item-cross center">
-      <Para fontSize={26} fontWeight="semi-bold">X</Para>
-
+        <Para
+          fontSize={26}
+          fontWeight="semi-bold"
+          style={{cursor:"pointer"}}
+          onClick={() => deleteItemFromCart(products.id)}
+        >
+          X
+        </Para>
       </div>
 
       {/* <h1>

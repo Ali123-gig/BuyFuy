@@ -3,6 +3,7 @@
   background: chartreuse;
   overflow-y: scroll;
   row-gap: 1em;
+  align-items: start;
 }
 .checkout-list-item-extends {
   /* justify-content: center; */

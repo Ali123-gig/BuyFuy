@@ -15,7 +15,7 @@ const CheckOut = ({ total }) => {
         <Header fontSize={40} fontWeight="bold">Shopping Cart</Header>
         <CheckoutList />
         <div className="checkout-bottom-content">
-        <Header fontSize={40} fontWeight="bold">Total:{total}</Header>
+        <Header fontSize={40} fontWeight="bold">Total:${total}</Header>
         <Button style={{justifySelf:"end",borderRadius:"30px"}} fontSize={15} fontWeight="semi-bold" background="#fff" color="black">Proceed & Pay</Button>
         </div>
         {/* {shipFormShown && <OrderForm />}
