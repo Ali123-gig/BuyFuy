@@ -30,7 +30,7 @@ const Navbar = ({ auth, siginout }) => {
       <MenuItems to="/Test">Test</MenuItems>
       <div>
         <Headers
-        onClick={()=>setNavbar(!navbar)}
+          onClick={()=>setNavbar(!navbar)}
           style={{ cursor: "pointer", display: "inline" }}
           fontSize={24}
           fontWeight="bold"

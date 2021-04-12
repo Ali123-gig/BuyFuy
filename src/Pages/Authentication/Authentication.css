@@ -1,0 +1,12 @@
+.authentication {
+  width: 100vw;
+  height:calc(100vh - var(--navbarHeight));
+  display: grid;
+  /* background: red; */
+  grid-template-columns: repeat(2,1fr);
+  font-size: 62.5%;
+}
+.auth-left{
+    background: url("./../../asset/image/ecommerce-seo-tips.jpg");
+    background-size: 100% 100% ,cover;
+}
