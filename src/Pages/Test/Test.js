@@ -6,8 +6,9 @@ import { uploadProducts } from "./../../Redux/products/productsAction";
 import Para from "./../../Components/Para/Para";
 import Button from "../../Components/Button/Button";
 import ProductCard from "../../Components/ProductCard/ProductCard";
+import { openModals } from "./../../Redux/modals/modalsAction";
 
-const Test = ({ uploadProducts }) => {
+const Test = ({ uploadProducts, openModals }) => {
   var [category, setCategory] = useState("");
   var [title, setTitle] = useState("");
   var [cost, setCost] = useState("");
@@ -28,7 +29,7 @@ const Test = ({ uploadProducts }) => {
     uploadProducts(ProductsObj);
   };
   return (
-    <div style={{fontSize:"62.5%"}}>
+    <div style={{ fontSize: "62.5%" }}>
       <h1>Test</h1>
       {/* <form onSubmit={handleSubmit}>
         <input
@@ -77,7 +78,13 @@ const Test = ({ uploadProducts }) => {
         <br />
         <button type="submit">Submit</button>
       </form> */}
-      <Cart />
+      {/* <Cart /> */}
+      <Button onClick={() => openModals({ modalType: "testModal" })}>
+        Open Modals
+      </Button>
+      <Button onClick={() => openModals({ modalType: "errorModal",modalProps:{error:"something went wrong!"} })}>
+        Error Modals
+      </Button>
       {/* <Header fontSize={15} fontWeight="bold">
         This my first Heading
       </Header>
@@ -95,5 +102,6 @@ const Test = ({ uploadProducts }) => {
 
 var action = {
   uploadProducts,
+  openModals,
 };
 export default connect(null, action)(Test);
