@@ -85,6 +85,9 @@ const Test = ({ uploadProducts, openModals }) => {
       <Button onClick={() => openModals({ modalType: "errorModal",modalProps:{error:"something went wrong!"} })}>
         Error Modals
       </Button>
+      <Button onClick={() => openModals({ modalType: "addressModal" })}>
+        address Modals
+      </Button>
       {/* <Header fontSize={15} fontWeight="bold">
         This my first Heading
       </Header>

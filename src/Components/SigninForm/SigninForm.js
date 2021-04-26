@@ -23,8 +23,6 @@ const SigninForm = (props) => {
         id="standard-basic"
         style={{ width: "100%" }}
         label="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
       />
       <TextField
         value={password}
@@ -32,8 +30,6 @@ const SigninForm = (props) => {
         id="standard-basic"
         style={{ width: "100%" }}
         label="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
       />
       <Button
         type="submit"
